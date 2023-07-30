@@ -10,7 +10,7 @@ const props = defineProps({
 	// laravelのページネーションを使用する場合はオブジェクト型にする必要がある
 	customers: Object
 })
-console.log(props.customers.data);
+
 const search = ref('')
 
 const searchCustomers = () => {

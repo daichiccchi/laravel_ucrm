@@ -32,4 +32,10 @@ class Customer extends Model
             }
         }
     }
+
+    // Purchaseモデルとのリレーション
+    public function purchases()
+    {
+        return $this->hasMany(Purchase::class, 'customer_id', 'id');
+    }
 }
