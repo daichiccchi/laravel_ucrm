@@ -1,20 +1,22 @@
 <script setup>
 import { Link } from '@inertiajs/inertia-vue3';
-defineProps({
-    blogs: Array
-})
-</script>
+import Modal from '@/Components/MicroModalTest.vue';
+import ChildComponent from '@/Components/ChildComponent.vue';
+import { onMounted, reactive, ref, computed, onUnmounted } from 'vue';
 
+const isShow = ref(false)
+
+const toggle = () => {
+    isShow.value = !isShow.value;
+}
+
+
+</script>
 <template>
-    <div v-if="$page.props.flash.message" class="bg-blue-300">
-        {{ $page.props.flash.message }}
+    <button type="button" @click="toggle" class="m-5 px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white transition ease-in-out duration-150">
+        表示/非表示
+    </button>
+    <div v-show="isShow">
+        <ChildComponent />
     </div>
-    <ul>
-        <li v-for="blog in blogs" :key="blog.id">
-            <Link :href="route('inertia.show', { id: blog.id })">
-                件名：{{ blog.title }},
-            </Link>
-            本文：{{ blog.content }}
-        </li>
-    </ul>
 </template>

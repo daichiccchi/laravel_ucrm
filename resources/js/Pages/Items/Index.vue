@@ -57,7 +57,6 @@ defineProps({
 											<td class="px-4 py-3">{{ item.price }}</td>
 											<td class="px-4 py-3 text-lg text-gray-900">{{ item.is_selling }}</td>
 										</tr>
-
 									</tbody>
 								</table>
 							</div>
