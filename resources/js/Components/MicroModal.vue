@@ -35,7 +35,7 @@ const setCustomer = (customer) => {
 </script>
 <template>
     <div class="modal" v-show="isShow" id="modal-1" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal__overlay" @click.self="toggle" tabindex="-1" data-micromodal-close>
             <div class="modal__container w-2/3" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                 <header class="modal__header">
                     <h2 class="modal__title" id="modal-1-title">
